@@ -14,43 +14,51 @@
   function replaceText(root) {
     var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     var node;
-    var changed = 0;
     while ((node = walker.nextNode())) {
-      var value = node.nodeValue;
-      if (!value) continue;
+      var value = node.nodeValue || '';
       for (var i = 0; i < replacements.length; i++) {
         var from = replacements[i][0];
         if (value.indexOf(from) !== -1) {
-          node.nodeValue = value.split(from).join(replacements[i][1]);
-          value = node.nodeValue;
-          changed++;
+          value = value.split(from).join(replacements[i][1]);
+          node.nodeValue = value;
         }
       }
     }
-    return changed;
   }
 
   function addManifesto(root) {
     if (document.getElementById('nivenar-professional-manifesto')) return;
     var text = root.textContent || '';
-    if (text.indexOf('Ainda não tenho fonoaudiólogo') === -1 && text.indexOf('Já tenho acompanhamento profissional') === -1) return;
+    if (text.indexOf('Ainda não tenho fonoaudiólogo') === -1) return;
     var box = document.createElement('div');
     box.id = 'nivenar-professional-manifesto';
     box.setAttribute('role', 'note');
     box.style.cssText = 'max-width:1040px;margin:20px auto;padding:16px 22px;border-radius:18px;background:rgba(65,57,145,.08);text-align:center;font-weight:700;line-height:1.5;box-sizing:border-box';
     box.textContent = 'O profissional conduz. O paciente pratica. A tecnologia auxilia. A NIVENAR conecta tudo.';
     var target = root.querySelector('main') || root;
-    if (target.firstElementChild && target.firstElementChild.nextSibling) target.insertBefore(box, target.firstElementChild.nextSibling);
+    if (target.firstElementChild) target.insertBefore(box, target.firstElementChild.nextSibling);
     else target.appendChild(box);
   }
 
+  function apply() {
+    var root = document.getElementById('root');
+    if (!root) return;
+    replaceText(root);
+    addManifesto(root);
+  }
+
+  apply();
   var attempts = 0;
   var timer = setInterval(function () {
     attempts++;
+    apply();
     var root = document.getElementById('root');
-    if (!root) return;
-    var changed = replaceText(root);
-    if (changed > 0) addManifesto(root);
-    if (changed > 0 || attempts >= 24) clearInterval(timer);
+    var text = root ? (root.textContent || '') : '';
+    if ((text.indexOf('Ainda não tenho fonoaudiólogo') !== -1 && text.indexOf('Praticar por conta própria') === -1) || attempts >= 80) {
+      clearInterval(timer);
+    }
   }, 250);
+
+  window.addEventListener('hashchange', function () { setTimeout(apply, 50); setTimeout(apply, 300); });
+  window.addEventListener('popstate', function () { setTimeout(apply, 50); setTimeout(apply, 300); });
 })();
