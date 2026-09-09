@@ -2,32 +2,23 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <!-- GitHub Pages não deixa configurar headers HTTP — estas tags reduzem o cache do
-         navegador para este HTML (os assets com hash no nome continuam com cache forte). -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="NIVENAR — A evolução continua. Profissionais, pacientes, atividades e evolução conectados em um só lugar, com NIV e NIVA como assistentes inteligentes." />
+    <meta name="description" content="NIVENAR — acompanhamento fonoaudiológico contínuo, com profissional conduzindo a jornada e tecnologia apoiando o cuidado entre as sessões." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Manrope:wght@400..800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Manrope:wght@400..800&display=swap" rel="stylesheet" />
     <title>NIVENAR — A evolução continua.</title>
-    <!-- Desfaz o redirecionamento feito pelo 404.html (ver esse arquivo), restaurando a
-         URL original antes do React Router assumir. Precisa rodar antes do bundle da app. -->
     <script type="text/javascript">
       ;(function (l) {
         if (l.search[1] === '/') {
           var decoded = l.search
             .slice(1)
             .split('&')
-            .map(function (s) {
-              return s.replace(/~and~/g, '&')
-            })
+            .map(function (s) { return s.replace(/~and~/g, '&') })
             .join('?')
           window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash)
         }
@@ -38,6 +29,78 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      ;(function () {
+        const replacements = [
+          ['Paciente + IA + Fonoaudiólogo + Conteúdo + Gamificação', 'Profissional + Paciente + Tecnologia + Continuidade do cuidado'],
+          ['Pratique quando quiser, evolua no seu ritmo — a NIVENAR é uma plataforma de acompanhamento fonoaudiológico contínuo, não apenas consultas online.', 'Aqui, seu profissional conduz sua jornada, você pratica além das sessões e a NIVENAR auxilia no acompanhamento da sua evolução. Uma plataforma de acompanhamento fonoaudiológico contínuo, onde tecnologia e profissional trabalham juntos para manter seu cuidado em movimento.'],
+          ['Seu fonoaudiólogo cria o conteúdo', 'Seu fonoaudiólogo avalia e conduz sua jornada'],
+          ['Ele envia um vídeo ou orientação sobre o que você precisa praticar — sem depender de uma consulta ao vivo.', 'O profissional define os objetivos do cuidado, orienta o acompanhamento e personaliza o que será trabalhado com você.'],
+          ['NIV/NIVA transformam em atividade', 'NIV e NIVA apoiam o plano definido'],
+          ['A IA organiza o conteúdo em uma trilha de atividades curtas e interativas, no seu nível.', 'A tecnologia organiza atividades e orientações dentro da jornada estabelecida pelo profissional, sem substituir sua avaliação clínica.'],
+          ['Você pratica quando quiser', 'Você pratica entre as sessões'],
+          ['De manhã, à noite, em casa ou durante uma viagem — o treino te espera no seu ritmo.', 'As atividades indicadas pelo profissional ficam disponíveis para você praticar no seu ritmo, mantendo a continuidade do cuidado.'],
+          ['Seu fonoaudiólogo acompanha tudo', 'Seu profissional acompanha e ajusta'],
+          ['Progresso, sequência e desempenho chegam até ele, que ajusta as próximas atividades.', 'O progresso registrado ajuda o fonoaudiólogo a acompanhar sua evolução e ajustar os próximos passos da jornada.'],
+          ['Um ciclo contínuo de cuidado', 'Um ciclo contínuo de cuidado profissional'],
+          ['Não é só marcar consultas — é acompanhamento todos os dias, com apoio da IA.', 'O atendimento é conduzido pelo fonoaudiólogo. A NIVENAR amplia a continuidade do cuidado entre as sessões.'],
+          ['Dois caminhos, uma plataforma', 'Duas formas de começar'],
+          ['Você escolhe como quer começar — e pode transitar entre os dois', 'Com ou sem um profissional atual, o cuidado sempre começa com acompanhamento fonoaudiológico'],
+          ['Praticar por conta própria', 'Ainda não tenho fonoaudiólogo'],
+          ['Sem esperar por ninguém: a IA conduz o treino, dá feedback e registra sua evolução, a qualquer hora.', 'A NIVENAR ajuda você a encontrar um profissional. O atendimento começa com avaliação e condução fonoaudiológica; depois, a tecnologia apoia a continuidade entre as sessões.'],
+          ['Com acompanhamento profissional', 'Já tenho acompanhamento profissional'],
+          ['Um fonoaudiólogo avalia, personaliza sua jornada e acompanha sua evolução — a IA amplia esse cuidado no dia a dia.', 'Seu profissional conduz a jornada e utiliza a NIVENAR para organizar atividades, acompanhar sua prática e manter o cuidado em movimento entre uma sessão e outra.'],
+          ['Um guia amigável em cada atividade', 'Tecnologia de apoio dentro da jornada profissional'],
+          ['NIV e NIVA acompanham cada passo do treino — apresentam o vídeo, dão instruções, "analisam" sua pronúncia e comemoram seu progresso. Não substituem o fonoaudiólogo: são uma camada de apoio às atividades e ao acompanhamento entre uma sessão e outra.', 'NIV e NIVA acompanham as atividades definidas dentro da jornada, ajudam a apresentar instruções e registram a prática para apoiar o acompanhamento. Eles não realizam diagnóstico, não definem tratamento e não substituem o fonoaudiólogo: são uma camada de tecnologia a serviço do cuidado profissional.'],
+          ['Prefere procurar direto? Encontre o fonoaudiólogo que vai montar sua jornada', 'Encontre o fonoaudiólogo que vai conduzir sua jornada'],
+          ['Pratique em qualquer lugar', 'Continue seu cuidado em qualquer lugar'],
+          ['Pratique quando quiser. Evolua no seu ritmo. Conte com um profissional quando precisar.', 'O profissional conduz. Você pratica entre as sessões. A tecnologia auxilia e conecta cada etapa do cuidado.']
+        ]
+
+        function applyCopy(root) {
+          const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT)
+          const nodes = []
+          while (walker.nextNode()) nodes.push(walker.currentNode)
+          for (const node of nodes) {
+            let value = node.nodeValue || ''
+            let next = value
+            for (const [from, to] of replacements) next = next.split(from).join(to)
+            if (next !== value) node.nodeValue = next
+          }
+        }
+
+        function addManifesto() {
+          if (document.getElementById('nivenar-manifesto')) return
+          const paragraphs = Array.from(document.querySelectorAll('p'))
+          const hero = paragraphs.find((p) => p.textContent && p.textContent.includes('Aqui, seu profissional conduz sua jornada'))
+          if (!hero || !hero.parentElement) return
+          const box = document.createElement('div')
+          box.id = 'nivenar-manifesto'
+          box.textContent = 'O profissional conduz. O paciente pratica. A tecnologia auxilia. A NIVENAR conecta tudo.'
+          box.style.marginTop = '20px'
+          box.style.maxWidth = '640px'
+          box.style.padding = '14px 16px'
+          box.style.border = '1px solid #dfe7ff'
+          box.style.borderRadius = '16px'
+          box.style.background = 'rgba(255,255,255,.85)'
+          box.style.fontWeight = '600'
+          box.style.color = '#383e5c'
+          hero.insertAdjacentElement('afterend', box)
+        }
+
+        function refresh() {
+          const root = document.getElementById('root')
+          if (!root) return
+          applyCopy(root)
+          addManifesto()
+        }
+
+        const observer = new MutationObserver(refresh)
+        observer.observe(document.getElementById('root'), { childList: true, subtree: true, characterData: true })
+        refresh()
+        setTimeout(refresh, 300)
+        setTimeout(refresh, 1200)
+      })()
+    </script>
   </body>
 </html>
-
