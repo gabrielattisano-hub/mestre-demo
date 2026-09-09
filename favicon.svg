@@ -1,9 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#187f73"/>
-  <g fill="#ffffff">
-    <rect x="16" y="34" width="8" height="14" rx="3"/>
-    <rect x="28" y="24" width="8" height="24" rx="3"/>
-    <rect x="40" y="14" width="8" height="34" rx="3"/>
-  </g>
-  <circle cx="44" cy="10" r="4" fill="#ffd166"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="nv-tile" x1="0" y1="48" x2="48" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2b41d6"/>
+      <stop offset="1" stop-color="#7132c9"/>
+    </linearGradient>
+    <linearGradient id="nv-accent" x1="32" y1="18" x2="42" y2="6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#8231d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="13" fill="url(#nv-tile)"/>
+  <path d="M33.5 17.5 C33.5 12 37.5 8 42.5 7.2 C41.2 11.8 41.6 15.6 44 19.2 C39.8 19.9 36.2 19.2 33.5 17.5Z" fill="url(#nv-accent)" opacity="0.95"/>
+  <path d="M14 34 L14 14 L34 34 L34 14" fill="none" stroke="#ffffff" stroke-width="7.4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
