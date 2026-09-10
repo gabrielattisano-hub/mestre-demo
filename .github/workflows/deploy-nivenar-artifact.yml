@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Download production build
         run: |
-          curl -fL 'https://sdmntprcentralus.oaiusercontent.com/files/00000000-4080-81f5-b145-ed74eb938a80/raw?se=2026-09-09T17%3A03%3A45Z&sp=r&sv=2026-02-06&sr=b&scid=7a88c8d6-8896-560d-9bb1-4e64b83d6786&skoid=db6dad9e-03ee-465b-aef6-ce0f63a161dc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-09T11%3A44%3A29Z&ske=2026-09-10T11%3A44%3A29Z&sks=b&skv=2026-02-06&sig=S5UmhQu/kTFGvmXTuG0SYfIzVqsa72s/c22SqqNeaUk%3D' -o /tmp/nivenar-ghpages.zip
+          curl -fL 'https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-17e0-820e-b310-d965919dd378/raw?se=2026-09-10T01%3A52%3A06Z&sp=r&sv=2026-02-06&sr=b&scid=b583a02e-2dc1-56ea-b412-c4e0b68f23ed&skoid=db6dad9e-03ee-465b-aef6-ce0f63a161dc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-09T19%3A56%3A32Z&ske=2026-09-10T19%3A56%3A32Z&sks=b&skv=2026-02-06&sig=OkTpV1F8m2grDhK1flZ10j%2B7T7fnlRJs3HIBInPFnsA%3D' -o /tmp/nivenar-ghpages.zip
           rm -rf /tmp/nivenar-site
           mkdir -p /tmp/nivenar-site
           unzip -q /tmp/nivenar-ghpages.zip -d /tmp/nivenar-site
@@ -34,5 +34,5 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A
-          git commit -m 'deploy: cadastro profissional com verificação CPF e CRFa'
+          git commit -m 'deploy: publicar painel admin e agenda profissional'
           git push origin main
