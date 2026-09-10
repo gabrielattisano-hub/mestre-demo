@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Download production build
         run: |
-          curl -fL 'https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-5614-820e-9fea-31fc0b221e6b/raw?se=2026-09-10T02%3A33%3A32Z&sp=r&sv=2026-02-06&sr=b&scid=069c3641-ace4-533b-9d97-45ec76e665ef&skoid=db6dad9e-03ee-465b-aef6-ce0f63a161dc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-09T19%3A56%3A40Z&ske=2026-09-10T19%3A56%3A40Z&sks=b&skv=2026-02-06&sig=FxvVhJnBSEWOou1gEcYk9NUxzQGCbDgwuKkY4Z0CAFM%3D' -o /tmp/nivenar-ghpages.zip
+          curl -fL 'https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-40f8-820e-86cd-ee3379d4dc2e/raw?se=2026-09-10T02%3A46%3A56Z&sp=r&sv=2026-02-06&sr=b&scid=fc48f33e-37ac-5148-b89b-e3d91378bdb9&skoid=db6dad9e-03ee-465b-aef6-ce0f63a161dc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-09T20%3A02%3A43Z&ske=2026-09-10T20%3A02%3A43Z&sks=b&skv=2026-02-06&sig=kEq0yfYXhZwXYKZLp6hBJa0FgPciE91ae84QT0rK/Hk%3D' -o /tmp/nivenar-ghpages.zip
           rm -rf /tmp/nivenar-site
           mkdir -p /tmp/nivenar-site
           unzip -q /tmp/nivenar-ghpages.zip -d /tmp/nivenar-site
@@ -34,5 +34,5 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A
-          git commit -m 'deploy: corrigir fluxo de definição de senha administrativa'
+          git commit -m 'deploy: publicar recuperação de senha por código OTP'
           git push origin main
