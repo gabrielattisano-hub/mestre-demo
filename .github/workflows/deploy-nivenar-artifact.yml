@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Download production build
         run: |
-          curl -fL 'https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-fb34-820e-ac57-35c495895fee/raw?se=2026-09-11T19%3A48%3A03Z&sp=r&sv=2026-02-06&sr=b&scid=2947f355-a46f-5fbb-accc-03c211192893&skoid=db6dad9e-03ee-465b-aef6-ce0f63a161dc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-11T02%3A17%3A05Z&ske=2026-09-12T02%3A17%3A05Z&sks=b&skv=2026-02-06&sig=aWpiBbHY1b9IOg6fWs2qJyWNBb/2fF5jOo5WO8JJdC8%3D' -o /tmp/nivenar-ghpages.zip
+          curl -fL 'https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-a25c-820e-86e3-6e37f8ac9aec/raw?se=2026-09-11T19%3A52%3A53Z&sp=r&sv=2026-02-06&sr=b&scid=b6ff3a36-06b3-58f1-b8e7-7957e6713347&skoid=db6dad9e-03ee-465b-aef6-ce0f63a161dc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-11T12%3A02%3A55Z&ske=2026-09-12T12%3A02%3A55Z&sks=b&skv=2026-02-06&sig=pxWsdItlVW8UiwYJJAooIILJXopqakyj63ohg%2BqcMEM%3D' -o /tmp/nivenar-ghpages.zip
           rm -rf /tmp/nivenar-site
           mkdir -p /tmp/nivenar-site
           unzip -q /tmp/nivenar-ghpages.zip -d /tmp/nivenar-site
@@ -34,5 +34,5 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A
-          git commit -m 'deploy: documentos legais e links de consentimento'
+          git commit -m 'deploy: dashboard admin clicável'
           git push origin main
